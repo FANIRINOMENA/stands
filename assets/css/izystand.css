@@ -1,0 +1,193 @@
+/* Izystand custom */
+:root { }
+body { }
+
+/* Footer modules look nicer with Bootstrap-only theme */
+footer ul {
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Newsletter input/button alignment (common module markup) */
+footer input[type="email"],
+footer input[type="text"],
+footer input[type="search"]{
+  max-width: 420px;
+}
+
+.izy-stand{
+  padding: 12px 14px 34px;
+}
+
+/* Header */
+.izy-stand__header{
+  margin-bottom: 18px;
+}
+
+.izy-stand__title{
+  font-weight: 900;
+  color: #0a7a3f;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+
+.izy-stand__rule{
+  height: 2px;
+  background: rgba(10, 122, 63, .6);
+  width: 100%;
+  margin: 0 0 18px;
+}
+.izy-stand__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px;
+  margin-top: 40px;
+}
+.izy-stand__card {
+  text-align: center;
+}
+.izy-stand__type {
+  color: #bfa075;
+  margin-bottom: 20px;
+}
+.izy-stand__imagewrapper {
+  width: 280px;
+  height: 280px;
+  margin: 0 auto 15px;
+  border: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.izy-stand__imagewrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.izy-stand__bottomblock {
+  max-width: 280px;
+  margin: 0 auto;
+  text-align: left;     
+}
+.izy-stand__thumbs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.izy-stand__thumbs img {
+  width: 60px;
+  height: 60px;             
+  object-fit: cover;         
+  cursor: pointer;
+  opacity: 0.6;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+.izy-stand__price,
+.izy-stand__tech {
+  margin-top: 10px;
+  font-style: italic;
+  color: #bfa075;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+}
+.izy-stand__Caracteristiques {
+  margin-top: 10px;
+  color: #bfa075;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+}
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* Tablette (≤ 1024px) */
+@media (max-width: 1024px) {
+  .izy-stand__grid {
+    gap: 40px;
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+
+  .izy-stand__grid {
+    grid-template-columns: 1fr; /* 1 colonne */
+    gap: 50px;
+  }
+
+  .izy-stand__imagewrapper {
+    width: 100%;
+    max-width: 320px;
+    height: 320px;
+  }
+
+  .izy-stand__bottomblock {
+    max-width: 320px;
+  }
+
+  .izy-stand__thumbs {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .izy-stand__thumbs img {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* Petit mobile (≤ 480px) */
+@media (max-width: 480px) {
+
+  .izy-stand {
+    padding: 10px;
+  }
+
+  .izy-stand__title {
+    font-size: 22px;
+  }
+
+  .izy-stand__imagewrapper {
+    height: 260px;
+  }
+
+  .izy-stand__thumbs img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .izy-stand__price,
+  .izy-stand__tech {
+    font-size: 13px;
+  }
+
+  .izy-stand__Caracteristiques {
+    font-size: 11px;
+  }
+}
+
+.izy-stand__thumbs img:hover,
+.izy-stand__thumbs img.active {
+  opacity: 1;
+  border-color: #0a7a3f;
+}
+.block-price {
+  margin-top: 14px;
+}

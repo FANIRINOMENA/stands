@@ -1,0 +1,261 @@
+/* ========== Layout global: sidebar + contenu ========== */
+.izy-layout{
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Contenu principal à droite */
+.izy-main{
+  flex: 1;
+  min-width: 0;
+}
+
+/* ========== Sidebar (desktop visible) ========== */
+.izy-sidebar{
+  width: 240px;
+  background: #f6f1df;
+  border-right: 1px solid rgba(0,0,0,.08);
+
+  height: 100vh;
+  overflow: hidden;
+
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 22px 16px;
+
+  /* Transition (utile en mobile) */
+  transition: transform .25s ease;
+  will-change: transform;
+}
+
+/* ========== Top / Bottom spacing ========== */
+.izy-sidebar__top{ margin-bottom: 10px; }
+.izy-sidebar__bottom{ margin-top: 12px; }
+
+/* ========== Logo top: cadre blanc arrondi + bord vert ========== */
+.izy-sidebar__logo-wrap{
+  background: #ffffff;
+  border: 2px solid #0a7a3f;
+  border-radius: 22px;
+  padding: 12px;
+  max-width: 165px;
+  margin: 0 auto;
+  box-shadow: 0 2px 0 rgba(0,0,0,.05);
+}
+
+.izy-sidebar__logo-top{
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 110px;
+  object-fit: contain;
+}
+
+/* ========== Menu (aligné à gauche + hover premium) ========== */
+.izy-sidebar__menu{
+  display: block;      /* plus de centrage */
+  text-align: left;    /* liens alignés à gauche */
+  margin-top: 10px;
+}
+
+.izy-sidebar__menu .nav{
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Lien (bloc cliquable) */
+.izy-sidebar__link{
+  position: relative;
+
+  font-weight: 800;
+  letter-spacing: .04em;
+  color: #0a7a3f !important;
+  text-transform: uppercase;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 12px;
+  border-radius: 14px;
+
+  text-decoration: none;
+  line-height: 1.1;
+
+  transition: background-color .18s ease,
+              transform .18s ease,
+              box-shadow .18s ease;
+}
+
+/* Puce verte */
+.izy-sidebar__link::before{
+  content: "•";
+  color: #0a7a3f;
+  font-size: 22px;
+  line-height: 1;
+  transform: translateY(-1px);
+}
+
+/* Indicateur à gauche (barre) */
+.izy-sidebar__link::after{
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%) scaleY(.4);
+  width: 4px;
+  height: 18px;
+  border-radius: 4px;
+  background: #0a7a3f;
+  opacity: 0;
+  transition: opacity .18s ease, transform .18s ease;
+}
+
+/* Hover/Focus : fond + légère translation + barre visible */
+.izy-sidebar__link:hover,
+.izy-sidebar__link:focus{
+  background: rgba(10, 122, 63, .10);
+  box-shadow: 0 1px 0 rgba(0,0,0,.06);
+  transform: translateX(2px);
+  outline: none;
+  text-decoration: none; /* plus d’underline */
+}
+
+.izy-sidebar__link:hover::after,
+.izy-sidebar__link:focus::after{
+  opacity: 1;
+  transform: translateY(-50%) scaleY(1);
+}
+
+/* Etat actif si tu ajoutes class="active" sur le lien */
+.izy-sidebar__link.active{
+  background: rgba(10, 122, 63, .16);
+}
+
+.izy-sidebar__link.active::after{
+  opacity: 1;
+  transform: translateY(-50%) scaleY(1);
+}
+
+/* ========== Bottom partner line: "Un produit de" + logo inline ========== */
+.izy-partner{
+  display: flex;
+  align-items: center;
+  justify-content: center; /* laisse centré comme la capture */
+  gap: 10px;
+  white-space: nowrap;
+}
+
+/* Si tu veux le bas aligné à gauche, dé-commente :
+.izy-partner{ justify-content: flex-start; }
+*/
+
+.izy-partner__text{
+  font-size: 14px;
+  color: #0a7a3f;
+  font-weight: 500;
+}
+
+.izy-partner__logo{
+  display: block;
+  height: 28px;
+  width: auto;
+  opacity: .95;
+}
+
+/* =========================================================
+   MOBILE : sidebar cachée + chevron + overlay
+   ========================================================= */
+.izy-sidebar-toggle{
+  display: none; /* affiché seulement en mobile */
+}
+
+.izy-sidebar-overlay{
+  display: none; /* affiché seulement en mobile */
+}
+
+@media (max-width: 991.98px){
+
+  /* Sidebar devient offcanvas (cachée par défaut) */
+  .izy-sidebar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1040;
+
+    width: 240px;
+    height: 100vh;
+
+    transform: translateX(-100%);
+  }
+
+  /* Quand ouvert */
+  body.izy-sidebar-open .izy-sidebar{
+    transform: translateX(0);
+  }
+
+  /* Overlay */
+  .izy-sidebar-overlay{
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.35);
+    z-index: 1030;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease;
+  }
+
+  body.izy-sidebar-open .izy-sidebar-overlay{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Chevron button */
+  .izy-sidebar-toggle{
+    display: grid;
+    place-items: center;
+
+    position: fixed;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1050;
+
+    width: 38px;
+    height: 56px;
+
+    border: 2px solid #0a7a3f;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 2px 0 rgba(0,0,0,.08);
+
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .izy-chevron{
+    font-size: 26px;
+    line-height: 1;
+    color: #0a7a3f;
+    font-weight: 900;
+    transform: translateX(1px);
+    transition: transform .2s ease;
+  }
+
+  /* Chevron tourne quand ouvert */
+  body.izy-sidebar-open .izy-chevron{
+    transform: rotate(180deg);
+  }
+
+  /* Sur mobile, le contenu prend toute la largeur */
+  .izy-main{
+    width: 100%;
+  }
+}

@@ -1,0 +1,115 @@
+name: izystands
+display_name: "Izystands"
+version: 1.2.0
+author:
+  name: "Jean Rakotondrasoa"
+  email: "jrakoto280@gmail.com"
+  url: "https://portfolio-jean-rakotondrasoa.vercel.app"
+
+meta:
+  compatibility:
+    from: 9.0.0
+    to: ~
+
+  available_layouts:
+    layout-full-width:
+      name: Full Width
+      description: No side columns.
+    layout-left-column:
+      name: Left column
+      description: Left column layout.
+    layout-right-column:
+      name: Right column
+      description: Right column layout.
+    layout-both-columns:
+      name: Both columns
+      description: Two side columns.
+
+assets:
+  use_parent_assets: false
+  css:
+    all:
+      - id: izystands-sidebar
+        path: assets/css/sidebar.css
+        media: all
+        priority: 180
+      - id: izystands-homepage
+        path: assets/css/homepage.css
+        media: all
+        priority: 190
+      # Ton CSS custom (Bootstrap est chargé via CDN dans head.tpl)
+      - id: izystands-custom
+        path: assets/css/izystand.css
+        media: all
+        priority: 200
+      - id: izystands-commande
+        path: assets/css/commande.css
+        media: all
+        priority: 210
+      - id: izystands-formulaire
+        path: assets/css/formulaire.css
+        media: all
+        priority: 210
+      - id: izystands-A-proposPage
+        path: assets/css/apropos.css
+        media: all
+        priority: 200
+      
+  js:
+    all:
+      - id: izystands-homepage
+        path: assets/js/homepage.js
+        priority: 200
+    - id: izystands-stand
+        path: assets/js/stands.js
+        priority: 210
+    - id: izystands-commande
+        path: assets/js/commande.js
+        priority: 210
+  # Pas de JS ici (Bootstrap JS est chargé via CDN dans footer.tpl)
+  # et le JS core Prestashop est chargé via _partials/javascript.tpl
+
+theme_settings:
+  default_layout: layout-full-width
+
+global_settings:
+  image_types:
+    cart_default:
+      width: 80
+      height: 80
+      scope: [products]
+
+    small_default:
+      width: 125
+      height: 125
+      scope: [products, categories, manufacturers, suppliers]
+
+    medium_default:
+      width: 300
+      height: 300
+      scope: [products, categories, manufacturers, suppliers]
+
+    large_default:
+      width: 500
+      height: 500
+      scope: [products]
+
+    home_default:
+      width: 250
+      height: 250
+      scope: [products]
+
+    category_default:
+      width: 960
+      height: 350
+      scope: [categories]
+
+    product_listing:
+      width: 220
+      height: 220
+      scope: [products, categories, manufacturers, suppliers]
+
+    large_banner:
+      width: 960
+      height: 400
+      scope: [categories]

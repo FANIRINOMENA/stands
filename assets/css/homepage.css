@@ -1,0 +1,217 @@
+/* ===========================
+   Homepage Izy - PRESENTATION
+   =========================== */
+
+.izy-home{
+  padding: 12px 14px 34px;
+}
+
+/* Header */
+.izy-home__header{
+  margin-bottom: 18px;
+}
+
+.izy-home__title{
+  font-weight: 900;
+  color: #0a7a3f;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+
+.izy-home__rule{
+  height: 2px;
+  background: rgba(10, 122, 63, .6);
+  width: 100%;
+  margin: 0 0 18px;
+}
+
+.izy-home__headline{
+  margin: 0 0 10px;
+  text-align: center;
+  font-style: italic;
+  color: #0a7a3f;
+  font-size: 18px;
+}
+
+.izy-home__lead{
+  text-align: center;
+  max-width: 840px;
+  margin: 0 auto;
+  color: rgba(10, 122, 63, .82);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Grid */
+.izy-home__grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: start;
+  margin-top: 18px;
+}
+
+/* Blocks */
+.izy-home__block{
+  text-align: center;
+}
+
+/* Media container */
+.izy-home__media{
+  border: 1px solid rgba(0,0,0,.18);
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Images (base) */
+.izy-home__img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Grande image : affichage complet */
+.izy-home__img--contain{
+  object-fit: contain;
+  background: #fff;
+}
+
+/* ===========================
+   Galerie : image + miniatures
+   =========================== */
+
+.izy-home__media--gallery{
+  display: grid;
+  grid-template-columns: 1fr 78px;
+  gap: 12px;
+  align-items: start;
+}
+
+.izy-home__main{
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.izy-home__thumbs{
+  display: grid;
+  grid-auto-rows: 92px;
+  gap: 12px;
+}
+
+.izy-home__thumb{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,.15);
+  background: #fff;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.izy-home__thumb:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.12);
+  border-color: rgba(10, 122, 63, .45);
+}
+
+/* ===========================
+   Vidéo (lecture directe)
+   =========================== */
+
+.izy-home__media--video{
+  position: relative;
+}
+
+.izy-home__video{
+  width: 100%;
+  height: 320px;      /* ✅ même hauteur que la galerie */
+  overflow: hidden;
+  border-radius: 8px;
+  background: #fff;
+}
+
+/* Le player remplit la zone */
+.izy-home__video-player{
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 8px;
+  background: #fff;       /* ✅ plus de noir */
+  object-fit: contain;    /* vidéo entière */
+}
+
+/* Label sous bloc */
+.izy-home__label{
+  margin-top: 12px;
+  font-weight: 900;
+  color: #0a7a3f;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+/* Values */
+.izy-home__values{
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+.izy-home__value{
+  font-weight: 900;
+  color: #0a7a3f;
+  text-transform: uppercase;
+  font-size: 22px;
+  text-decoration: underline;
+}
+
+/* ===========================
+   Responsive
+   =========================== */
+
+@media (max-width: 991.98px){
+
+  .izy-home__grid{
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .izy-home__media--gallery{
+    grid-template-columns: 1fr;
+  }
+
+  .izy-home__main{
+    height: 260px;
+  }
+
+  .izy-home__video{
+    height: 260px;
+  }
+
+  .izy-home__thumbs{
+    grid-auto-flow: column;
+    grid-auto-columns: 88px;
+    grid-auto-rows: 88px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+
+  .izy-home__values{
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .izy-home__value{
+    font-size: 18px;
+  }
+}

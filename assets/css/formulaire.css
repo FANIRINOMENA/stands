@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    background: #ffffff;
+    color: #333;
+  }
+  
+  /* PAGE CONTAINER */
+  .page-container {
+    padding: 12px 14px 34px;
+  }
+  
+/* PAGE HEADER */
+.page-header h1 {
+    font-size: 32px;
+    color: #0c6b3c;
+    border-bottom: 3px solid #0c6b3c;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+  
+.product-title {
+    font-size: 20px;
+    color: #b67b4a;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+  
+/* ================================
+   FORMULAIRE DEVIS – BASE
+================================ */
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* INTRO */
+  .form-intro {
+    background: #f5f1e6;
+    padding: 20px;
+    border-left: 4px solid #0c6b3c;
+    border-radius: 6px;
+    margin-bottom: 35px;
+  }
+  
+  .form-intro p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  /* ================================
+     FORM GRID
+  ================================ */
+  
+  .devis-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group.full-width {
+    grid-column: 1 / -1;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #0c6b3c;
+    margin-bottom: 8px;
+  }
+  
+  .required {
+    color: #d9534f;
+  }
+  
+  /* INPUTS */
+  .form-group input,
+  .form-group textarea {
+    padding: 12px;
+    font-size: 14px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #0c6b3c;
+  }
+  
+  .form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  /* ERRORS */
+  .error-message {
+    display: none;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #d9534f;
+  }
+  
+  .error-message.show {
+    display: block;
+  }
+  
+  input.error,
+  textarea.error {
+    border-color: #d9534f;
+  }
+  
+  /* ================================
+     ACTION BUTTONS
+  ================================ */
+  
+  .form-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .btn-submit,
+  .btn-reset {
+    padding: 14px 35px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-submit {
+    background: #0c6b3c;
+    color: #fff;
+  }
+  
+  .btn-submit:hover {
+    background: #095530;
+  }
+  
+  .btn-reset {
+    background: #6c757d;
+    color: #fff;
+  }
+  
+  .btn-reset:hover {
+    background: #5a6268;
+  }
+  
+  /* ================================
+     SUCCESS MESSAGE
+  ================================ */
+  
+  .success-message {
+    text-align: center;
+    padding: 50px 30px;
+    background: #e8f4ed;
+    border: 2px solid #0c6b3c;
+    border-radius: 10px;
+  }
+  
+  .success-icon {
+    width: 70px;
+    height: 70px;
+    background: #0c6b3c;
+    color: #fff;
+    font-size: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+  }
+  
+  .success-message h3 {
+    color: #0c6b3c;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  .success-message p {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  /* ================================
+     RESPONSIVE
+  ================================ */
+  
+  /* TABLET */
+  @media (max-width: 768px) {
+    .devis-form {
+      grid-template-columns: 1fr;
+    }
+  
+    .form-actions {
+      flex-direction: column;
+    }
+  
+    .btn-submit,
+    .btn-reset {
+      width: 100%;
+    }
+  }
+  
+  /* MOBILE */
+  @media (max-width: 480px) {
+    .form-container {
+      padding: 10px;
+    }
+  
+    .form-intro {
+      padding: 15px;
+    }
+  
+    .success-message {
+      padding: 35px 20px;
+    }
+  
+    .success-icon {
+      width: 60px;
+      height: 60px;
+      font-size: 32px;
+    }
+  }
+  

@@ -1,0 +1,28 @@
+/* ===========================
+         STAND Izy
+   =========================== */
+
+.izy-stand{
+  padding: 12px 14px 34px;
+}
+
+/* Header */
+.izy-stand__header{
+  margin-bottom: 18px;
+}
+
+.izy-stand__title{
+  font-weight: 900;
+  color: #0a7a3f;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+
+.izy-stand__rule{
+  height: 2px;
+  background: rgba(10, 122, 63, .6);
+  width: 100%;
+  margin: 0 0 18px;
+}

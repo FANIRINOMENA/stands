@@ -1,0 +1,406 @@
+        /* ============================================
+           RESET & BASE
+           ============================================ */
+           * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #333;
+        }
+
+        /* ============================================
+           PAGE LAYOUT
+           ============================================ */
+        .page-container {
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        /* ============================================
+           MAIN CONTENT
+           ============================================ */
+        .main-content {
+            padding: 40px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* HEADER */
+        .page-header h1 {
+          font-size: 32px;
+          color: #0c6b3c;
+          border-bottom: 3px solid #0c6b3c;
+          padding-bottom: 12px;
+          margin-bottom: 20px;
+        }
+        
+        .product-title {
+          font-size: 20px;
+          color: #b67b4a;
+          font-style: italic;
+          margin-bottom: 40px;
+        }
+
+        /* ============================================
+           PRODUCT SECTION
+           ============================================ */
+        .product-section {
+            display: grid;
+            grid-template-columns: 90px 1fr 380px;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* THUMBNAILS */
+        .thumbnails {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .thumb {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border: 2px solid #ddd;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .thumb:hover,
+        .thumb.active {
+            border-color: #0c6b3c;
+        }
+
+        /* MAIN IMAGE */
+        .product-image {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+        }
+
+        /* ============================================
+           PRODUCT OPTIONS
+           ============================================ */
+        .product-options {
+            background: #f5f1e6;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-options h3 {
+            font-size: 18px;
+            color: #0c6b3c;
+            margin-bottom: 15px;
+        }
+
+        /* MATERIAL */
+        .material-choice {
+            margin-bottom: 25px;
+        }
+
+        .material-option {
+            display: flex;
+            align-items: center;
+            border: 2px solid #ccc;
+            padding: 12px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .material-option.active {
+            background: #e8f4ed;
+            border-color: #0c6b3c;
+        }
+
+        .material-option:hover {
+            border-color: #0c6b3c;
+            background: #f0f7f2;
+        }
+
+        .material-option input {
+            display: none;
+        }
+
+        .material-box {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #0c6b3c;
+            margin-right: 10px;
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .material-option.active .material-box::after {
+            content: "✓";
+            position: absolute;
+            top: -2px;
+            left: 2px;
+            color: #0c6b3c;
+            font-weight: bold;
+        }
+
+        .material-label {
+            font-size: 15px;
+            color: #b67b4a;
+            font-weight: 600;
+        }
+
+        /* STOCK */
+        .stock-status {
+            color: #0c6b3c;
+            font-weight: bold;
+            margin: 20px 0;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .stock-status::before {
+            content: "●";
+            color: #0c6b3c;
+            margin-right: 8px;
+            font-size: 20px;
+        }
+
+        /* QUANTITY */
+        .quantity-selector {
+            display: flex;
+            border: 2px solid #0c6b3c;
+            width: fit-content;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .qty-btn {
+            width: 40px;
+            border: none;
+            background: #f0f0f0;
+            font-size: 20px;
+            cursor: pointer;
+            color: #0c6b3c;
+            transition: background 0.3s;
+        }
+
+        .qty-btn:hover {
+            background: #e0e0e0;
+        }
+
+        #quantity {
+            width: 60px;
+            border: none;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            background: white;
+        }
+
+        /* BUTTON */
+        .btn-purchase {
+            width: 100%;
+            padding: 18px;
+            background: #0c6b3c;
+            color: white;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-purchase:hover {
+            background: #095530;
+        }
+
+        /* DELIVERY INFO */
+        .delivery-info {
+            background: #e8f4ed;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+            border: 1px solid #0c6b3c;
+        }
+
+        .delivery-info h4 {
+            color: #0c6b3c;
+            margin-bottom: 5px;
+        }
+
+        /* ============================================
+           DETAILS SECTION
+           ============================================ */
+        .details-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #e0e0e0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .details-column h4 {
+            color: #0c6b3c;
+            margin-bottom: 20px;
+            font-size: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .details-list,
+        .specs-list,
+        .feature-list {
+            margin-left: 20px;
+            line-height: 1.8;
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+
+        .details-list li,
+        .specs-list li,
+        .feature-list li {
+            margin-bottom: 8px;
+        }
+
+        .feature-block {
+            margin-bottom: 30px;
+            padding-left: 15px;
+            border-left: 3px solid #0c6b3c;
+        }
+
+        .feature-title {
+            color: #0c6b3c;
+            font-weight: bold;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        /* ============================================
+           BENEFITS SECTION
+           ============================================ */
+        .benefits-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+            padding: 40px 0;
+            border-top: 2px solid #e0e0e0;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .benefit-box {
+            text-align: center;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .benefit-box h4 {
+            color: #0c6b3c;
+            margin-bottom: 10px;
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 1100px) {
+            .product-section {
+                grid-template-columns: 80px 1fr 350px;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .main-content {
+                padding: 30px;
+            }
+
+            .product-section {
+                grid-template-columns: 1fr;
+            }
+
+            .thumbnails {
+                flex-direction: row;
+                justify-content: center;
+                order: 2;
+                margin-top: 20px;
+            }
+
+            .product-image {
+                order: 1;
+            }
+
+            .product-options {
+                order: 3;
+            }
+
+            .details-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .benefits-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 20px;
+            }
+
+            .page-header h1 {
+                font-size: 32px;
+            }
+
+            .product-title {
+                font-size: 20px;
+            }
+
+            .thumbnails {
+                flex-wrap: wrap;
+            }
+
+            .product-options {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 28px;
+            }
+
+            .product-title {
+                font-size: 18px;
+            }
+
+            .material-option {
+                padding: 10px;
+            }
+
+            .btn-purchase {
+                padding: 15px;
+                font-size: 16px;
+            }
+        }
