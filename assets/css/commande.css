@@ -1,7 +1,7 @@
-        /* ============================================
+/* ============================================
            RESET & BASE
            ============================================ */
-           * {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -25,7 +25,7 @@
            MAIN CONTENT
            ============================================ */
         .main-content {
-            padding: 40px 60px;
+            padding: 10px 40px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -34,9 +34,10 @@
         .page-header h1 {
           font-size: 32px;
           color: #0c6b3c;
-          border-bottom: 3px solid #0c6b3c;
-          padding-bottom: 12px;
+          border-bottom: 2px solid #0c6b3c;
+          padding-bottom: 6px;
           margin-bottom: 20px;
+          font-weight: bold;
         }
         
         .product-title {
